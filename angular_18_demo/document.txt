@@ -1,0 +1,45 @@
+Angular 18
+
+
+Video link::https://www.youtube.com/watch?v=FDIj5Vklnlc&list=PL7JmcZV0UQtUxsHS8dF3EINHdoIvRS6Ft
+
+create new project :: ng new {project_name}
+
+Install node module: npm install
+
+run the project :: ng serve
+    open browser: ng serve -o
+    open another port:  ng serve --port 4202    	
+	
+============================	
+angular decorators
+	1) components
+	2) class
+	3) function
+	4) method
+
+===========================
+create new component
+ ng generate component {component name}
+ ng g c {component name}
+
+
+
+====================================
+we can use templateUrl or template.
+we cam also create styleurl or style.
+https://prnt.sc/eLptXNWsjY6c
+
+=================================
+DATA BINDING
+
+1) one way binding
+
+Interpolation          // {{}}  ,from ts to html (component file to view )
+Property Binding      //  []   ,from ts to html (component file to view )
+Event Binding        //   ()   ,from html to ts ( view file to component )
+
+2) two way binding
+Two-way Data Binding //   using ngModel
+
+3) using signal
