@@ -1,11 +1,12 @@
 import { Component, signal, Signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { single } from 'rxjs';
+import { StructuralDirComponent } from '../directives/structural-dir/structural-dir.component';
 
 @Component({
   selector: 'app-data-binding',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,StructuralDirComponent],
   templateUrl: './data-binding.component.html',
   styleUrl: './data-binding.component.css'
 })
@@ -36,4 +37,5 @@ constructor(){
   // set the signal variable value
   this.devName.set("python_Dev");
  }
+ 
 }

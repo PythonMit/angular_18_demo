@@ -1,0 +1,106 @@
+<p>structural-dir works!</p>
+
+
+<div class="row row-text">
+    <div class="col-3">
+        <button class="btn btn-primary btn-display" *ngIf="IsElementDiv"> DIV-1</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-secondary btn-display" *ngIf="IsElementDiv2"> DIV-2</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success btn-display" *ngIf="inputBox1 == inputBox2"> DIV-3</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-info btn-display" *ngIf="isActive?isActive:selectedCity!='india' "> DIV-4</button>
+    </div>
+</div>
+<div class="row row-text">
+    <div class="col-3">
+        <button class="btn btn-success subBtn-display"  (click)="elementDivShow()"> Show</button>
+        <button class="btn btn-info subBtn-display"  (click)="elementDivHide()"> Hide</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success subBtn-display"  (click)="toggleElementDIv()"> Toggle</button>
+    </div>
+    <div class="col-3">
+        <div class="row">
+            <div class="col-6">  <input type="text" [(ngModel)]="inputBox1"  class="subBtn-display" placeholder="input box1" > </div>
+           
+            <div class="col-6"> <input type="text" [(ngModel)]="inputBox2" class="subBtn-display" placeholder="input box2" > </div>
+        </div>
+       
+    </div>
+    <div class="col-3">
+        <div class="row">
+            <div class="col-6">
+        <input type="checkbox" class="form-check-input subBtn-display subBtn-display" [(ngModel)] = "isActive">
+    </div>
+    <div class="col-6">
+        <select [(ngModel)]="selectedCity" class="subBtn-display">
+        <option value="">select</option>
+        <option value="india">India</option>
+        <option value="uk">UK</option>
+        <option value="chile">Chile</option>
+       </select>
+    </div>
+    </div>
+    </div>
+<div class="row">
+    <div class="col-3">
+        <ul>
+            <li *ngFor= "let city of cities">{{city}}</li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <select>
+            <option *ngFor="let city of cities">{{city}}</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <select>
+            <option *ngFor="let employee of EmployeeObject" [value]="employee.sr_no" >{{employee.Name}}</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <table class="table table-success table-striped">
+        <thead>
+        <tr>
+            <th>Sr_No.</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>City</th>
+            <th>Designation</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of EmployeeObject ">
+            <td>{{employee.sr_no}}</td>
+            <td>{{employee.Name}}</td>
+            <td>{{employee.Salary}}</td>
+            <td>{{employee.City}}</td>
+            <td>{{employee.Designation}}</td>
+            <td>{{employee.Isstatus}}</td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <hr>
+            </td>
+        </tr>
+        <tr *ngFor="let employee of EmployeeObject; let srno = index">
+            <td>{{srno +1}}</td>
+            <td>{{employee.Name}}</td>
+            <td>{{employee.Salary}}</td>
+            <td>{{employee.City}}</td>
+            <td>{{employee.Designation}}</td>
+            <td>
+            <span *ngIf="employee.Isstatus">Active</span>    
+            <span *ngIf="!employee.Isstatus">De-Active</span>  
+            </td>
+        </tr>
+    </tbody>
+      </table>
+</div>
+</div>

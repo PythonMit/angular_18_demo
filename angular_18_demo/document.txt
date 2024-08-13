@@ -40,6 +40,24 @@ Property Binding      //  []   ,from ts to html (component file to view )
 Event Binding        //   ()   ,from html to ts ( view file to component )
 
 2) two way binding
-Two-way Data Binding //   using ngModel
+Two-way Data Binding //   using ngModel  [(ngModel)]
 
-3) using signal
+3) using signal    
+	define variable:: name:signal("name");
+	set the value to variable :: this.name.set("name");
+	
+if you use [(ngmodel)] we need to import [FormsModule] in particular component.
+
+==============================================
+DIRECTIVES
+
+if you use *ngif and any directives we need to import [CommonModule] in particular module.
+
+referance : https://angular.dev/guide/directives
+
+Directive Types 
+1) Components
+2) Attribute directives
+3) Structural directives
+
+
