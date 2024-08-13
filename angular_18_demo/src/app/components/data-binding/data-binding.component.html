@@ -1,0 +1,55 @@
+<p>data-binding works!</p>
+<table>
+    <tr>Interpolation data binding</tr>
+    <tr>
+        <td >
+          <h1>{{courseTitle}} </h1>
+        </td>
+        <td>{{subTitle}} </td>
+        <td>{{rollNo}}</td>
+        <td><input type="{{inputType}}" value="{{rollNo}}"></td>
+    </tr>
+    <tr> property Binding // ts to html</tr>
+    <tr>
+        <td>
+            <input type="text" [value]="courseTitle">
+            <input [type]="inputType" value="{{currentDate}}">
+        </td>
+    </tr>
+    <tr>
+        Event Binding // html to ts
+    </tr>
+    <tr>
+        <td> 
+            <input [type]="inputTypeButton" (click)="checkAlert()" value="{{rollNo}}">
+            <button (click)="checkAlertWithPara(courseTitle)">click me</button>
+            <span (click)="checkAlertWithPara('this from span tag')">click on span </span>
+        </td>
+    </tr>
+    <tr>
+        <td> <button class="btn btn-success" (click)="changeCourseTitle();">change course name</button> </td>
+         </tr>
+         <tr>
+            two-way binding
+         </tr>
+         <tr>
+            <td><input type="text" [(ngModel)]="courseTitle">-{{courseTitle}} </td>
+         </tr>
+         <tr>
+            <select [(ngModel)]="statName" >
+                <option value="">select</option>
+                <option value="gujarat"> Gujarat</option>
+                <option value="goa">Goa</option>
+                <option value="mumbai">Mumbai</option>
+
+            </select>
+            <input type="checkbox" [(ngModel)]="isIndia">  indian
+         </tr>
+
+         <tr> signal binding</tr>
+         <tr>
+            <td>
+                <h1> {{devName()}}</h1>
+            </td>
+         </tr>
+</table>
